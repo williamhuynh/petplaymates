@@ -1,0 +1,19 @@
+<%= simple_form_for(@profile) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :street %>
+    <%= f.input :suburb %>
+    <%= f.input :postcode %>
+    <%= f.input :state, collection: ['NSW', 'QLD', 'SA', 'VIC', 'NT', 'WA', 'ACT'] %>
+    <%= f.input :country, priority: ['Australia'] %>
+    <%= f.input :phone %>
+    <%= f.input :photo %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

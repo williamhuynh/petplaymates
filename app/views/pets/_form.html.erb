@@ -1,0 +1,16 @@
+<%= simple_form_for(@pet) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :breed %>
+    <%= f.input :age %>
+    <%= f.input :size, collection: ['Very small', 'Small', 'Medium', 'Large', 'Very Large'] %>
+    <%= f.input :photo, as: :file %>
+    <%= f.input :availability, placeholder: 'What days and times is your pet available?' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

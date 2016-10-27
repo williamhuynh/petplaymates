@@ -1,0 +1,90 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-body">
+
+    <p>
+      <strong>First name:</strong>
+      <%= @profile.first_name %>
+    </p>
+
+    <p>
+      <strong>Last name:</strong>
+      <%= @profile.last_name %>
+    </p>
+
+    <p>
+      <strong>Street:</strong>
+      <%= @profile.street %>
+    </p>
+
+    <p>
+      <strong>Suburb:</strong>
+      <%= @profile.suburb %>
+    </p>
+
+    <p>
+      <strong>Postcode:</strong>
+      <%= @profile.postcode %>
+    </p>
+
+    <p>
+      <strong>State:</strong>
+      <%= @profile.state %>
+    </p>
+
+    <p>
+      <strong>Country:</strong>
+      <%= @profile.country %>
+    </p>
+
+    <p>
+      <strong>Phone:</strong>
+      <%= @profile.phone %>
+    </p>
+
+    <p>
+      <strong>Photo:</strong>
+      <%= @profile.photo %>
+    </p>
+
+    <p>
+      <strong>Lat:</strong>
+      <%= @profile.latitude %>
+    </p>
+
+    <p>
+      <strong>Long:</strong>
+      <%= @profile.longitude %>
+    </p>
+
+
+    <p>
+      <strong>User:</strong>
+      <%= @profile.user %>
+    </p>
+
+
+<% if @profile.user == current_user %>
+  <%= link_to 'Edit', edit_profile_path(@profile) %>
+<% end %>
+
+      </div>
+    </div>
+  </div>
+
+<div class="col-md-4">
+  <% @profile.user.pets.each do |pet| %>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <%= pet.name %>
+      </div>
+    </div>
+  <% end %>
+
+<%= link_to 'Add pet', new_pet_path, class: 'btn btn-primary' %>
+</div>
+
+</div>
